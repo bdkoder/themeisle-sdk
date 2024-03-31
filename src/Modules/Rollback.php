@@ -120,9 +120,9 @@ class Rollback extends Abstract_Module {
 		if ( empty( $url ) ) {
 			return [];
 		}
-		$response = function_exists( 'wp_remote_get_wp_remote_get' )
-			? wp_remote_get_wp_remote_get( $url )
-			: wp_remote_get( $url ); //phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.wp_remote_get_wp_remote_get
+		$response = function_exists( 'wp_remote_get' )
+			? wp_remote_get( $url )
+			: wp_remote_get( $url ); //phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.wp_remote_get
 		if ( is_wp_error( $response ) ) {
 			return array();
 		}
